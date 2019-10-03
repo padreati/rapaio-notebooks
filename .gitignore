@@ -1,2 +1,3 @@
 *.iml
-/.ipynb_checkpoints/Getting started with Kaggle's Titanic Competition -checkpoint.ipynb
+*/.ipynb_checkpoints/*
+/.ipynb_checkpoints/

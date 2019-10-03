@@ -14,9 +14,6 @@ USER root
 # Download the kernel release
 RUN curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
 
-RUN curl -L https://github.com/padreati/rapaio-notebooks/jars/rapaio.jar > rapaio.jar
-RUN curl -L https://github.com/padreati/rapaio-notebooks/jars/fastutil-8.2.3.jar > fastutil.jar
-
 # Unpack and install the kernel
 RUN unzip ijava-kernel.zip -d ijava-kernel \
   && cd ijava-kernel \
