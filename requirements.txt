@@ -4,7 +4,7 @@ Pygments==2.4.2
 Send2Trash==1.5.0
 attrs==19.1.0
 backcall==0.1.0
-bleach==3.1.0
+bleach==3.1.1
 colorama==0.4.1
 libsodium==1.0.16
 decorator==4.4.0
