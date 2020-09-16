@@ -1,0 +1,56 @@
+site_name: Rapaio
+site_url: https://padreati.github.io/rapaio/
+#repo_url: https://github.com/padreati/rapaio
+site_author: Aurelian Tutuianu
+
+nav:
+  - Home: index.md
+  - Complete Features: complete-library-features.md
+  - Notebooks:
+      - notebooks/BriefPreview.md
+  - Tutorials:
+      - notebooks/tutorials/DataHandlingOverview.md
+  - About:
+      - about.md
+  - Source: https://github.com/padreati/rapaio
+
+theme:
+  name: material
+  custom_dir: overrides
+  highlightjs: true
+  hljs_languages:
+    - java
+use_directory_urls: true
+
+markdown_extensions:
+  - pymdownx.b64
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - codehilite
+
+plugins:
+  - nbconvert:
+      input_dir: .
+      recursive: true
+  - mkdocs-nav-enhancements
+  - exclude:
+      glob:
+        - miscelaneous
+        - data
+        - algorithms
+        - .ipynb_checkpoints
+        - "*.csv"
+        - "**/.ipynb_checkpoints/*"
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+  - https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+  - https://code.jquery.com/jquery-3.2.1.slim.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
+  - https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
