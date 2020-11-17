@@ -182,6 +182,24 @@ etc.
 
 * KMeans clustering
 
+**Graphics**
+
+* QQ Plot
+* Box Plot
+* Bar Plot
+* Histogram
+* 2D Histogram
+* Plot function line
+* Plot vertical/horizontal/ab line
+* Plot lines
+* Plot points
+* Density line KDE
+* ROC Curve
+* Segment2D
+* Plot legend
+
+
+
 ### Experminental Features
 
 Most of the features contained under this section does not meet the production ready bar. 
@@ -231,23 +249,6 @@ ready state. Until that happens, these are the experimental features:
 
 * Acf (correlation, covariance)
 * Pacf 
-
-**Graphics**
-
-* QQ Plot
-* Box Plot
-* Histogram
-* 2d Histogram
-* Plot function line
-* Plot vertical/horizontal/ab line
-* Plot lines
-* Plot points
-* Density line KDE
-* ROC Curve
-* Discrete Vertical Lines
-* Segment2D
-* Plot legend
-* BarChart
 
 **Matrices and vectors**
 
