@@ -8,7 +8,10 @@ nav:
   - Complete Features: complete-library-features.md
   - Tutorials:
       - notebooks/BriefPreview.md
+      - notebooks/tutorials/BuiltinDataSets.md
       - notebooks/tutorials/DataHandlingOverview.md
+      - notebooks/tutorials/Variables.md
+      - notebooks/tutorials/CoreStatisticalTools.md
   - about.md
   - Source: https://github.com/padreati/rapaio
 
