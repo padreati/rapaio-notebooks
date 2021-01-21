@@ -73,13 +73,13 @@ interactive usage, for which we provide an example:
 ```java
 
 // load first 4 numeric features of iris dataset into a matrix
-DM m = DMStripe.copy(Datasets.loadIrisDataset().removeVars("class"));
+DMatrix m = DMStripe.copy(Datasets.loadIrisDataset().removeVars("class"));
 // compute mean on row axis
-DV mean = m.mean(0);
+DVector mean = m.mean(0);
 // compute sd on row axis
-DV sd = m.sd(0);
+DVector sd = m.sd(0);
 // create a matrix which is the standardized version of m
-DM c = m.copy().sub(mean, 0).div(sd, 0);
+DMatrix c = m.copy().sub(mean, 0).div(sd, 0);
 ``` 
 
 ### Data Visualization
