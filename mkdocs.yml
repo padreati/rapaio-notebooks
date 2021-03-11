@@ -12,6 +12,7 @@ nav:
       - notebooks/tutorials/DataHandlingOverview.md
       - notebooks/tutorials/Variables.md
       - notebooks/tutorials/CoreStatisticalTools.md
+      - notebooks/tutorials/DataVisualization.md
   - about.md
   - Source: https://github.com/padreati/rapaio
 
