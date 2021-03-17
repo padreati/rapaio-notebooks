@@ -173,6 +173,7 @@ etc.
 * Tree: DecisionStump
 * Ensemble: RForest
 * Boost: Gradient Boosting Trees
+* RVM (Relevance Vector Machine)
 
 **Analysis**
 
