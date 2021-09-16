@@ -43,6 +43,7 @@ other sampling strategies for sampling rows.
 * *RowSampler* implementations used in machine learning algorithms: bootstrap, identity, subsampling
 * *DensityVector* onw way discrete density vector tool
 * *DensityTable* two way discrete density table tool
+* *Distance Matrix*
 
 
 **Distributions**
@@ -181,27 +182,37 @@ etc.
 
 **Clustering**
 
-* KMeans clustering
+* KMeans
+* KMedians
+* Cluster Silhouette
+
 
 **Graphics**
 
-* QQ Plot
-* Box Plot
-* Bar Plot
-* Histogram
-* 2D Histogram
-* Plot function line
-* Plot vertical/horizontal/ab line
-* Plot lines
-* Plot points
-* Density line KDE
+* QQ Plot - quantile to quantile plots
+* Box Plot - boc plots
+* Bar Plot - bar plots
+* Histogram - histograms
+* 2D Histogram - 2 dimensional histograms
+* Function line - function lines
+* Vertical/horizontal/ab line - simple lines
+* Plot lines - lines from points
+* Plot points - scatter plot points
+* Density line KDE 
 * ROC Curve
-* Segment2D
-* Plot legend
+* Segment2D - line segment
+* Plot legend - legends
+* PolyLine, PolyFill - polygons from plots 
+* CorrGram - diagram of correlations
+* Silhouette - cluster silhouette
+* Text - simple texts
+* IsoCurves - iso bands and iso curves
+* Matrix - plot of a matrix
+* Image - images
 
 
 
-### Experminental Features
+### Experimental Features
 
 Most of the features contained under this section does not meet the production ready bar. 
 This does not mean that most of them are not usable, and sometimes what is missing
@@ -216,10 +227,6 @@ ready state. Until that happens, these are the experimental features:
 **Core**
 
 * Special Math functions
-
-**Core tools**
-
-* Distance Matrix
 
 **Evaluation: metrics**
 
@@ -243,7 +250,6 @@ ready state. Until that happens, these are the experimental features:
 
 **Clustering**
 
-* Cluster Silhouette
 * Minkowski Weighted KMeans
 
 **Time Series**
