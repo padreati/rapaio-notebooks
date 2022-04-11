@@ -70,7 +70,7 @@ and also other types for the underlying values. We provide also a set of matrix 
 like Cholesky, LU, Eigen Decomposition, QR and SVD. The API syntax was designed for clean 
 interactive usage, for which we provide an example:
 
-```java
+```
 
 // load first 4 numeric features of iris dataset into a matrix
 DMatrix m = DMStripe.copy(Datasets.loadIrisDataset().removeVars("class"));
