@@ -7,17 +7,24 @@ nav:
   - Home: index.md
   - Complete Features: complete-library-features.md
   - Tutorials:
-      - notebooks/BriefPreview.md
-      - notebooks/tutorials/BuiltinDataSets.md
-      - notebooks/tutorials/DataHandlingOverview.md
-      - notebooks/tutorials/Variables.md
-      - notebooks/tutorials/CoreStatisticalTools.md
-      - notebooks/tutorials/DataVisualization.md
-  - about.md
+      - Brief preview: BriefPreview.ipynb
+      - tutorials/BuiltinDataSets.ipynb
+      - tutorials/DataHandlingOverview.ipynb
+      - tutorials/Variables.ipynb
+      - tutorials/CoreStatisticalTools.ipynb
+      - tutorials/DataVisualization.ipynb
+  - About: about.md
   - Source: https://github.com/padreati/rapaio
 
 theme:
   name: material
+  palette:
+    scheme: default
+    primary: teal
+  font:
+    text: STIX Two Text
+    code: Roboto Mono
+  logo: images/logo-small.png
   custom_dir: overrides
   highlightjs: true
   hljs_languages:
@@ -34,9 +41,9 @@ markdown_extensions:
   - codehilite
 
 plugins:
-  - nbconvert:
-      input_dir: .
-      recursive: true
+  - mkdocs-jupyter:
+      include: [ "*.ipynb" ]  # Default: ["*.py", "*.ipynb"]
+      ignore: [ "some-irrelevant-files/*.ipynb" ]
   - mkdocs-nav-enhancements
   - exclude:
       glob:

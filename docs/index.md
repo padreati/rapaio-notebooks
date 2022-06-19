@@ -29,8 +29,8 @@ succint and expressive. Let's take an example:
 // create a variable holding a sequence of values from 0 to 10
 Var x = VarDouble.seq(0, 10).withName("x");
 
-double sum = x.op().nansum(); // compute sum
-x.op().apply(value -> value/sum); // make unit vector
+double sum = x.dv().nansum(); // compute sum
+x.dv().apply(value -> value/sum); // make unit vector
 x.printContent(); // print variable content
 ```
 ```

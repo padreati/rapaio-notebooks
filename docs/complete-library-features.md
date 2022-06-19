@@ -169,9 +169,7 @@ etc.
 * LinearRegression
 * RidgeRegression
 * WeightedLinearRegression
-* Tree: CART (no pruning)
-* Tree: C45 (no pruning)
-* Tree: DecisionStump
+* Decision Trees: CART (no pruning), C45 (no pruning), DecisionStumps
 * Ensemble: RForest
 * Boost: Gradient Boosting Trees
 * RVM (Relevance Vector Machine)
@@ -183,6 +181,7 @@ etc.
 **Clustering**
 
 * KMeans
+* Minkowski Weighted KMeans
 * KMedians
 * Cluster Silhouette
 
@@ -218,8 +217,7 @@ Most of the features contained under this section does not meet the production r
 This does not mean that most of them are not usable, and sometimes what is missing
 is only a tiny piece like no complete printing facilities. 
 
-However, due to the high
-likelihood of future changes, they will be kept under this umbrella until enough time 
+However, due to the high likelihood of future changes, they will be kept under this umbrella until enough time 
 and code is spend on improvements and testing to raise those tools to a production 
 ready state. Until that happens, these are the experimental features:  
 
@@ -247,10 +245,6 @@ ready state. Until that happens, these are the experimental features:
 **Regression**
 
 * NNet: MultiLayer Perceptron Regressor
-
-**Clustering**
-
-* Minkowski Weighted KMeans
 
 **Time Series**
 
