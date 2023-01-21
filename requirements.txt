@@ -18,7 +18,7 @@ jedi==0.15.1
 jsonschema==3.0.2
 jupyter-client==5.3.3
 jupyter-console==5.1.0
-jupyter-core==4.5.0
+jupyter-core==4.11.2
 jupyter==1.0.0
 jupyterlab-server==1.0.6
 jupyterlab==1.2.21
