@@ -1,4 +1,4 @@
-FROM openjdk:11.0.3-jdk
+FROM amazoncorretto:20
 
 RUN apt-get update
 RUN apt-get install -y python3-pip
@@ -12,16 +12,14 @@ RUN ([ -f requirements.txt ] \
 USER root
 
 # Download the kernel release
-RUN curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
+RUN curl -L https://github.com/padreati/rapaio-jupyter-kernel/releases/download/1.2.0/rapaio-jupyter-kernel-1.2.0.jar > rapaio-jupyter-kernel-1.2.0.jar
 
 # Unpack and install the kernel
-RUN unzip ijava-kernel.zip -d ijava-kernel \
-  && cd ijava-kernel \
-  && python3 install.py --sys-prefix
+RUN java -jar ./rapaio-jupyter-kernel-1.2.0.jar -i -auto
 
 # Set up the user environment
 
-ENV NB_USER jovyan
+ENV NB_USER rjk
 ENV NB_UID 1000
 ENV HOME /home/$NB_USER
 
