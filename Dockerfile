@@ -9,7 +9,7 @@ RUN pip3 install --no-cache-dir jupyter jupyterlab
 USER root
 
 # Download the kernel release
-RUN curl -L https://github.com/padreati/rapaio-jupyter-kernel/releases/download/1.2.0/rapaio-jupyter-kernel-1.2.0.jar > rapaio-jupyter-kernel-1.2.0.jar
+RUN curl -L https://github.com/padreati/rapaio-jupyter-kernel/releases/download/1.2.1/rapaio-jupyter-kernel-1.2.1.jar > rapaio-jupyter-kernel-1.2.1.jar
 
 
 # Set up the user environment
@@ -29,7 +29,7 @@ RUN chown -R $NB_UID $HOME
 USER $NB_USER
 
 # Unpack and install the kernel
-RUN java -jar ./rapaio-jupyter-kernel-1.2.0.jar -i -auto
+RUN java -jar ./rapaio-jupyter-kernel-1.2.1.jar -i -auto
 
 # Launch the notebook server
 WORKDIR $HOME
