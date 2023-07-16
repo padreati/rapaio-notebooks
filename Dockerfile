@@ -34,14 +34,14 @@ USER $NB_USER
 # Unpack and install the kernel
 RUN java -jar ./rapaio-jupyter-kernel-1.2.2.jar -i -auto
 
+# Launch the notebook server
+WORKDIR $HOME
 
 # trust notebooks
 RUN jupyter trust ./BriefPreview.ipynb
 RUN jupyter trust ./rapaio-bootstrap.ipynb
 RUN jupyter trust ./TitanicKaggleCompetition.ipynb
 
-# Launch the notebook server
-WORKDIR $HOME
 
 # binder does not allow internet access, as such we will use everything offline
 
