@@ -12,6 +12,9 @@ USER root
 RUN curl -L https://github.com/padreati/rapaio-jupyter-kernel/releases/download/1.2.2/rapaio-jupyter-kernel-1.2.2.jar > rapaio-jupyter-kernel-1.2.2.jar
 
 
+RUN apk add --no-cache msttcorefonts-installer fontconfig
+RUN update-ms-fonts
+
 # Set up the user environment
 
 ENV NB_USER rjk
@@ -30,6 +33,12 @@ USER $NB_USER
 
 # Unpack and install the kernel
 RUN java -jar ./rapaio-jupyter-kernel-1.2.2.jar -i -auto
+
+
+# trust notebooks
+RUN jupyter trust ./BriefPreview.ipynb
+RUN jupyter trust ./rapaio-bootstrap.ipynb
+RUN jupyter trust ./TitanicKaggleCompetition.ipynb
 
 # Launch the notebook server
 WORKDIR $HOME
