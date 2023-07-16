@@ -29,7 +29,7 @@ RUN chown -R $NB_UID $HOME
 USER $NB_USER
 
 # Unpack and install the kernel
-RUN java -jar ./rapaio-jupyter-kernel-1.2.1.jar -i -auto
+RUN java -jar ./rapaio-jupyter-kernel-1.2.2.jar -i -auto
 
 # Launch the notebook server
 WORKDIR $HOME
