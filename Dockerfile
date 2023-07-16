@@ -9,7 +9,7 @@ RUN pip3 install --no-cache-dir jupyter jupyterlab
 USER root
 
 # Download the kernel release
-RUN curl -L https://github.com/padreati/rapaio-jupyter-kernel/releases/download/1.2.1/rapaio-jupyter-kernel-1.2.1.jar > rapaio-jupyter-kernel-1.2.1.jar
+RUN curl -L https://github.com/padreati/rapaio-jupyter-kernel/releases/download/1.2.2/rapaio-jupyter-kernel-1.2.2.jar > rapaio-jupyter-kernel-1.2.2.jar
 
 
 # Set up the user environment
@@ -33,5 +33,10 @@ RUN java -jar ./rapaio-jupyter-kernel-1.2.1.jar -i -auto
 
 # Launch the notebook server
 WORKDIR $HOME
+
+# binder does not allow internet access, as such we will use everything offline
+
+RUN curl -L https://github.com/padreati/rapaio/releases/download/5.1.0/rapaio-core-5.1.0.jar > rapaio-core-5.1.0.jar
+
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
 EXPOSE 8888

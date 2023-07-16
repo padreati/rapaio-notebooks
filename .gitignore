@@ -4,3 +4,5 @@
 /site/
 /mkdocs-nbconvert/
 *.csv
+rapaio-core-*.jar
+/.idea/jupyter-settings.xml
