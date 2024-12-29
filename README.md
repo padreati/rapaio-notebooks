@@ -12,6 +12,12 @@ below contains views on some of the notebooks.
 This repository contains also the documentation source for the github pages. Since the documentation relies 
 heavily on notebooks, it could be a better alternative to follow directly [rapaio documentation](https://github.com/padreati/rapaio).
 
+##
+
+```
+jupyter-book build --all ./rapaio && touch ./rapaio/.nojekyll
+```
+
 ## List of notebooks
 
 [Brief Preview](https://nbviewer.jupyter.org/github/padreati/rapaio-notebooks/blob/master/BriefPreview.ipynb)

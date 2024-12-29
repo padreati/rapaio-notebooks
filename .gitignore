@@ -1,6 +1,8 @@
 *.iml
 */.ipynb_checkpoints/*
 /.ipynb_checkpoints/
+/rapaio/algorithms/.ipynb_checkpoints/*
+/rapaio/tutorials/.ipynb_checkpoints/*
 /site/
 /mkdocs-nbconvert/
 *.csv

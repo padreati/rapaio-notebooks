@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: BriefPreview
+- file: tutorials/BuiltinDataSets
+- file: tutorials/Variables
+- file: tutorials/DataHandlingOverview
+- file: tutorials/CoreStatisticalTools
+- file: tutorials/DataVisualization
+- file: tutorials/ReadingAndWritingData
+- file: tutorials/LinearAlgebraOverview
+- file: tutorials/NeuralNetworks
+- file: algorithms/KMeans
+- file: about
