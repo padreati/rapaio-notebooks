@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Algorithms: KMeans &#8212; Rapaio Book</title>
+    <title>Algorithms: KMeans</title>
   
   
   
@@ -64,11 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/KMeans';</script>
-    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="About" href="../about.html" />
-    <link rel="prev" title="Tensors and Neural Networks" href="../tutorials/NeuralNetworks.html" />
+    <link rel="prev" title="Custom networks" href="../tutorials/CustomNetwork.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Rapaio Book - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Rapaio Book - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
@@ -166,22 +164,33 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to Rapaio Book
+                    Rapaio Book
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../BriefPreview.html">Brief preview</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/BriefOverview.html">Brief preview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/about-me.html">About me</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Library</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/BuiltinDataSets.html">Built-in Data sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DataHandlingOverview.html">Data Handling Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/CoreStatisticalTools.html">Core statistical tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DataVisualization.html">Data visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/ReadingAndWritingData.html">Reading and Writing data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DArrays, Tensors and Neural Networks</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/LinearAlgebraOverview.html">Linear Algebra Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/NeuralNetworks.html">Tensors and Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TensorsAndNeuralNetworks.html">Tensors and Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/CustomNetwork.html">Custom networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithms: KMeans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 </ul>
 
     </div>
@@ -336,18 +345,15 @@ document.write(`
 <h1>Algorithms: KMeans<a class="headerlink" href="#algorithms-kmeans" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load</span><span class="w"> </span><span class="p">..</span><span class="o">/</span><span class="n">rapaio</span><span class="o">-</span><span class="n">bootstrap</span><span class="p">.</span><span class="na">ipynb</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load</span><span class="w"> </span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">rapaio</span><span class="o">-</span><span class="n">bootstrap</span><span class="p">.</span><span class="na">ipynb</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding dependency <span class=" -Color -Color-Bold -Color-Bold-Green">io.github.padreati:rapaio-lib:7.0.0</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding dependency <span class=" -Color -Color-Bold -Color-Bold-Green">io.github.padreati:rapaio-lib:7.0.1</span>
 Solving dependencies
-Resolved artifacts count: 4
-Add to classpath: <span class=" -Color -Color-Green">/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/io/github/padreati/rapaio-lib/7.0.0/rapaio-lib-7.0.0.jar</span>
-Add to classpath: <span class=" -Color -Color-Green">/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/io/github/padreati/rapaio-code-gen/7.0.0/rapaio-code-gen-7.0.0.jar</span>
-Add to classpath: <span class=" -Color -Color-Green">/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/antlr/ST4/4.3.4/ST4-4.3.4.jar</span>
-Add to classpath: <span class=" -Color -Color-Green">/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/org/antlr/antlr-runtime/3.5.3/antlr-runtime-3.5.3.jar</span>
+Resolved artifacts count: 1
+Add to classpath: <span class=" -Color -Color-Green">/home/ati/work/rapaio-jupyter-kernel/target/mima_cache/io/github/padreati/rapaio-lib/7.0.1/rapaio-lib-7.0.1.jar</span>
 
 </pre></div>
 </div>
@@ -412,12 +418,12 @@ Add to classpath: <span class=" -Color -Color-Green">/home/ati/work/rapaio-jupyt
 &gt; var: 1,622.7494621
 &gt; sd: 40.2833646
 &gt; inertia/error:8,901.7687209
-&gt; iterations:5
+&gt; iterations:6
 
 Per cluster: 
     ID count    mean         var      var/total     sd     
-[0]  1   172 31.6604119 1,763.2348144 1.0865724 41.9908897 
-[1]  2   100 34.5617787 1,391.1074822 0.8572534 37.2975533 
+[0]  2   172 31.6604119 1,763.2348144 1.0865724 41.9908897 
+[1]  1   100 34.5617787 1,391.1074822 0.8572534 37.2975533 
 </pre></div>
 </div>
 </div>
@@ -431,7 +437,7 @@ Per cluster:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3b1802e0c72e967a5108171460cd5e0f424b8c524334f93d62d4427732b0b9f6.png" src="../_images/3b1802e0c72e967a5108171460cd5e0f424b8c524334f93d62d4427732b0b9f6.png" />
+<img alt="../_images/91748d828ae1f67d37d3deba52fce2bace275b02aa6150e5bc29db6c30afd357.png" src="../_images/91748d828ae1f67d37d3deba52fce2bace275b02aa6150e5bc29db6c30afd357.png" />
 </div>
 </div>
 </section>
@@ -467,22 +473,13 @@ Per cluster:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../tutorials/NeuralNetworks.html"
+       href="../tutorials/CustomNetwork.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tensors and Neural Networks</p>
+        <p class="prev-next-title">Custom networks</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../about.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">About</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

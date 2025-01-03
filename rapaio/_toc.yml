@@ -3,15 +3,25 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: BriefPreview
-- file: tutorials/BuiltinDataSets
-- file: tutorials/Variables
-- file: tutorials/DataHandlingOverview
-- file: tutorials/CoreStatisticalTools
-- file: tutorials/DataVisualization
-- file: tutorials/ReadingAndWritingData
-- file: tutorials/LinearAlgebraOverview
-- file: tutorials/NeuralNetworks
-- file: algorithms/KMeans
-- file: about
+
+parts:
+  - caption: About
+    chapters:
+      - file: about/BriefOverview
+      - file: about/about-me
+  - caption: Core Library
+    chapters:
+    - file: tutorials/BuiltinDataSets
+    - file: tutorials/Variables
+    - file: tutorials/DataHandlingOverview
+    - file: tutorials/CoreStatisticalTools
+    - file: tutorials/DataVisualization
+    - file: tutorials/ReadingAndWritingData
+  - caption: DArrays, Tensors and Neural Networks
+    chapters:
+    - file: tutorials/LinearAlgebraOverview
+    - file: tutorials/TensorsAndNeuralNetworks
+    - file: tutorials/CustomNetwork
+  - caption: Algorithms
+    chapters:
+    - file: algorithms/KMeans

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rapaio-notebooks.iml" filepath="$PROJECT_DIR$/rapaio-notebooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rapaio-book.iml" filepath="$PROJECT_DIR$/rapaio-book.iml" />
     </modules>
   </component>
 </project>
