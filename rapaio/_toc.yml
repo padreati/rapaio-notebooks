@@ -22,6 +22,7 @@ parts:
     - file: tutorials/LinearAlgebraOverview
     - file: tutorials/TensorsAndNeuralNetworks
     - file: tutorials/CustomNetwork
+    - file: tutorials/NetworkSerialization
   - caption: Algorithms
     chapters:
     - file: algorithms/KMeans
